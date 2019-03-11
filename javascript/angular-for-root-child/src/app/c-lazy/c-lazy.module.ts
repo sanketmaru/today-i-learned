@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CRoutingModule } from "./c-lazy-routing-module";
-import { SharedModule } from "./shared.module";
+// import { SharedModule } from "./shared.module";
+import { CComponent } from "../c/c.component";
+
 @NgModule({
-  declarations: [],
+  declarations: [CComponent],
   imports: [
     CommonModule,
     CRoutingModule,
-    SharedModule
+    // SharedModule
   ]
 })
 export class CLazyModule { }
