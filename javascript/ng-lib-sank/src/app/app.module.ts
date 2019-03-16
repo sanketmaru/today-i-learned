@@ -3,10 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AModule } from "./a/a.module";
-import { BModule } from './b/b.module';
-import { AService } from "./services/a.service";
-import { NgLibSankModule } from "ng-lib-sank";
 
 @NgModule({
   declarations: [
@@ -14,12 +10,9 @@ import { NgLibSankModule } from "ng-lib-sank";
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    BModule,
-    AModule,
-    NgLibSankModule
+    AppRoutingModule
   ],
-  providers: [AService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
