@@ -4,10 +4,12 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgLibSankCarouselModule } from 'ng-lib-sank';
+import { SankCardComponent } from './sank-card/sank-card.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SankCardComponent
   ],
   imports: [
     BrowserModule,
