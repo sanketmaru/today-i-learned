@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { CComponent } from '../c/c.component';
+import { BComponent } from "../b/b.component";
 
 
 const routes: Routes = [
   {
     path: '',
-    component: CComponent
+    component: BComponent
   }
 ];
 

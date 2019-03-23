@@ -7,6 +7,7 @@ import { AModule } from "./a/a.module";
 import { BModule } from './b/b.module';
 import { AService } from "./services/a.service";
 import { NgLibSankModule } from "ng-lib-sank";
+import { SharedModule } from './c-lazy/shared.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { NgLibSankModule } from "ng-lib-sank";
     AppRoutingModule,
     BModule,
     AModule,
-    NgLibSankModule
+    NgLibSankModule,
+    SharedModule
   ],
   providers: [AService],
   bootstrap: [AppComponent]
