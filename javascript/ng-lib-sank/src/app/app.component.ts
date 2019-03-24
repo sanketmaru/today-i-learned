@@ -1,13 +1,18 @@
 import { Component } from '@angular/core';
 
+enum View {
+  GRID = 'grid',
+  CAROUSEL = 'carousel'
+};
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ng-lib-sank-app';
   public imagesData = [];
+  public view: string = View.CAROUSEL;
   constructor() {
     this.imagesData = [{
       title: 'Image 1',
@@ -18,5 +23,21 @@ export class AppComponent {
       description: 'Image 1 desc',
       image: 'https://www.isoi.edu.pk/system/files/node_gallery/sample1_l_1.jpeg'
     }];
+  }
+
+  public isCarouselView() {
+    return this.view === View.CAROUSEL;
+  }
+
+  public isGridView() {
+    return this.view === View.GRID;
+  }
+
+  public setViewToCarousel() {
+    this.view = View.CAROUSEL;
+  }
+
+  public setViewToGrid() {
+    this.view = View.GRID;
   }
 }
