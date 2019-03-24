@@ -1,4 +1,8 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<sank-carousel></sank-carousel>
+<sank-carousel [data]="imagesData">
+    <ng-template #cardItem let-item>
+        <sank-card [item]="item"></sank-card>
+    </ng-template>
+</sank-carousel>
 
 <router-outlet></router-outlet>

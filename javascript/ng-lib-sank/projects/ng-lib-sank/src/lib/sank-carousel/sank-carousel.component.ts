@@ -1,29 +1,27 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
-import {OwlCarousel} from 'ngx-owl-carousel';
+import { Component, ContentChild, Input, TemplateRef, ViewChild, OnChanges } from '@angular/core';
+import { OwlCarousel } from 'ngx-owl-carousel';
+import { ImageData } from '../sank-card/sank-card.model';
 
 @Component({
   selector: 'sank-carousel',
   templateUrl: './sank-carousel.component.html',
   styleUrls: ['./sank-carousel.component.css']
 })
-export class SankCarouselComponent implements OnInit {
-  @Input() public autoplay: boolean = false;
-  public images: string[];
+export class SankCarouselComponent implements OnChanges {
+  @Input() public data: ImageData[]  = [];
   @ViewChild('owlElement') owlElement: OwlCarousel
-
-  constructor() { }
-
-  public ngOnInit() {
-    this.images = ['https://source.unsplash.com/random/800x600', 'http://source.unsplash.com/user/hannahrodrigo/800x600'];
-    if (this.autoplay) {
-      setTimeout( () => {
-        this.next();
-      }, 3000)
-    }
+  @ContentChild(TemplateRef) cardItemTmpl: TemplateRef<any>;
+  
+  public ctx = {
+    $implicit: {}
+  };
+  
+  constructor() {
+    console.log(this.data);
   }
 
-  public next() {
-
+  public ngOnChanges() {
+    console.log('on changes', this.data);
   }
 
   public onLeft(event) {
