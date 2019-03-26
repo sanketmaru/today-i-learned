@@ -11,11 +11,7 @@ export class SankCarouselComponent implements OnChanges {
   @Input() public data: ImageData[]  = [];
   @ViewChild('owlElement') owlElement: OwlCarousel
   @ContentChild(TemplateRef) cardItemTmpl: TemplateRef<any>;
-  
-  public ctx = {
-    $implicit: {}
-  };
-  
+   
   constructor() {
     console.log(this.data);
   }
